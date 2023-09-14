@@ -1,0 +1,457 @@
+/* reseteo de css le pongo * que se aplica a toda la web y margin y padding 0 al principio de la web */
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  background-color: #222021;
+}
+/* voy a ponerle nombre a una de mis fuentes , voy  ahacer una familia y en el weight le pongo la que corresponde*/
+@font-face {
+  font-family: Montserrat;
+  src: url(../fonts/Montserrat-Bold.ttf) format("truetype");
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: Montserrat;
+  src: url(../fonts/Montserrat-Medium.ttf) format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+@font-face {
+  font-family: Montserrat;
+  src: url(../fonts/Montserrat-Light.ttf) format("truetype");
+  font-style: normal;
+  font-weight: 200;
+}
+@font-face {
+  font-family: KyivType;
+  src: url(../fonts/KyivTypeSans-Bold-.otf) format("truetype");
+  font-style: normal;
+  font-weight: 700;
+}
+@font-face {
+  font-family: KyivType;
+  src: url(../fonts/KyivTypeSans-Medium-.otf) format("truetype");
+  font-style: normal;
+  font-weight: 400;
+}
+/* aca voy a declarar que los links sean blancos y le saco el subrayado sacando text decoration */
+a {
+  color: white;
+  text-decoration: none;
+}
+/* le ddeclaro none en el list style para eliminar bullets y numeros y le puse color blanco*/
+ul,
+ol {
+  list-style: none;
+  color: white;
+}
+
+@media (min-width: 992px) {
+  header {
+    position: fixed;
+    background-color: #222021;
+    display: grid;
+    grid-template-columns: 200px auto;
+    height: 85px;
+    width: 100vw;
+    justify-content: space-around;
+    align-items: center;
+  }
+  .logo {
+    display: flex;
+    padding: 0;
+    margin: 0;
+  }
+  /* declaro la family del nav, y si no encuentra la monserrat que busque la sans serif */
+  .nav {
+    font-family: "Montserrat", sans-serif;
+    font-weight: 700;
+    display: grid;
+    grid-template-columns: repeat(2, 125px) 200px repeat(2, 125px);
+    /* aca le pongo gap solo para dejarlo porque en realidad como la tercera columna es muy grande la arregle con el ancho de columnas */
+    gap: 0 20px;
+    justify-content: end;
+    /* posicion relative es para que quede fijo incluso cuando abro el submenu, sino se movia */
+    position: relative;
+  }
+  .submenu {
+    display: none;
+    /* posicion absolute es para que quede fijo incluso cuando abro el submenu, sino se movia (relative en el nav */
+    position: absolute;
+  }
+  nav li:hover .submenu {
+    display: block;
+  }
+  /* acà para poner el background de imagen pongo url y ../ para buscar desde el indice todos los archivos */
+  .main_principal {
+    background-image: url(../img/fondo\ de\ main.png);
+    background-repeat: no-repeat;
+    background-size: 908px 1080px;
+    width: 1440px;
+    height: 1080px;
+    display: flex;
+    justify-content: end;
+  }
+  .main_principal_wrapper {
+    background-image: url(../img/Rectangle\ 39.png);
+    background-repeat: no-repeat;
+    background-size: 1245px 714px;
+    width: 1245px;
+    height: 714px;
+    margin-top: 220px;
+    display: grid;
+    grid-template-columns: 0.8fr 1fr;
+  }
+  .main_principal_wrapper_text {
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    height: 70%;
+    justify-content: space-between;
+    align-items: start;
+  }
+  .text {
+    font-family: sans-serif;
+    font-weight: 400;
+    color: white;
+    font-size: 1.5rem;
+  }
+  .button {
+    background-color: transparent;
+    border: none;
+    scroll-behavior: smooth;
+  }
+  .main_principal_wrapper_images {
+    display: grid;
+    grid-template-areas:
+      "line image-1"
+      "line image-2"
+      "line image-3";
+    grid-template-columns: 40px 1fr;
+    grid-template-rows: 1.1fr 1fr 1fr;
+    padding: 70px;
+  }
+  .main_principal_wrapper_images-line {
+    grid-area: line;
+  }
+  .main_principal_wrapper_images-image1 {
+    grid-area: image-1;
+    justify-self: end;
+    padding-right: 50px;
+  }
+  .main_principal_wrapper_images-image2 {
+    grid-area: image-2;
+  }
+  .main_principal_wrapper_images-image3 {
+    grid-area: image-3;
+    justify-self: end;
+    padding-right: 50px;
+  }
+  .Clase_h2 {
+    font-family: KyivType;
+    font-weight: 400;
+    color: white;
+    font-size: 5rem;
+  }
+  .The_wood_we_work_with {
+    margin-top: 100px;
+    display: flex;
+    justify-content: center;
+  }
+  p {
+    font-family: sans-serif;
+    font-weight: 400;
+    color: white;
+    font-size: 1.5rem;
+  }
+  .The_wood_we_work_with_wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1.2fr 1fr 0.1fr 1fr;
+    gap: 40px 240px;
+    grid-template-areas:
+      "title title title"
+      "img-oak img-buk img-ash"
+      "title-oak title-buk title-ash"
+      "text-oak text-buk text-ash";
+  }
+  .The_wood_we_work_with_title {
+    grid-area: title;
+    padding-left: 14%;
+  }
+  .img-oak {
+    grid-area: img-oak;
+  }
+  .img-oak {
+    grid-area: img-buk;
+  }
+  .img-oak {
+    grid-area: img-ash;
+  }
+  .title-oak {
+    grid-area: title-oak;
+    padding-left: 75px;
+  }
+  .title-buk {
+    grid-area: title-buk;
+    padding-left: 75px;
+  }
+  .title-ash {
+    grid-area: title-ash;
+    padding-left: 75px;
+  }
+  .The_wood_we_work_with_wrapper_text_oak {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "checkmark_1 area1_1"
+      "checkmark_2 area1_2"
+      "checkmark_3 area1_3"
+      "strikethrough area1_4";
+    grid-area: text-oak;
+  }
+  .checkmark_1 {
+    grid-area: checkmark_1;
+  }
+  .checkmark_2 {
+    grid-area: checkmark_2;
+  }
+  .checkmark_3 {
+    grid-area: checkmark_3;
+  }
+  .strikethrough {
+    grid-area: strikethrough;
+  }
+  .area1_1 {
+    grid-area: area1_1;
+  }
+  .area1_2 {
+    grid-area: area1_2;
+  }
+  .area1_3 {
+    grid-area: area1_3;
+  }
+  .area1_4 {
+    grid-area: area1_4;
+  }
+  .The_wood_we_work_with_wrapper_text_buk {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "checkmark area2_1"
+      "strikethrough area2_2"
+      ". ."
+      ". .";
+    grid-area: text-buk;
+  }
+  .checkmark_1 {
+    grid-area: checkmark_1;
+  }
+  .strikethrough {
+    grid-area: strikethrough;
+  }
+  .area2_1 {
+    grid-area: area2_1;
+  }
+  .area2_2 {
+    grid-area: area2_2;
+  }
+  .The_wood_we_work_with_wrapper_text_ash {
+    display: grid;
+    grid-template-columns: 40px 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-template-areas:
+      "checkmark area2_1"
+      "strikethrough area2_2"
+      ". ."
+      ". .";
+    grid-area: text-ash;
+  }
+  .checkmark_1 {
+    grid-area: checkmark_1;
+  }
+  .strikethrough {
+    grid-area: strikethrough;
+  }
+  .area2_1 {
+    grid-area: area2_1;
+  }
+  .area2_2 {
+    grid-area: area2_2;
+  }
+  .Advantages_working_with_us {
+    display: flex;
+    flex-direction: column;
+  }
+  .Advantages_working_with_us_wrapper {
+    display: grid;
+    grid-template-areas:
+      "image text01"
+      "image text02"
+      "image text03";
+    grid-template-columns: 1.5fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    gap: 40px;
+    justify-content: center;
+    padding-left: 150px;
+  }
+  .Advantages_working_with_us_wrapper_img {
+    grid-area: image;
+  }
+  .Advantages_working_with_us_wrapper p {
+    font-family: sans-serif;
+    font-weight: 400;
+    color: white;
+    font-size: 1.5rem;
+  }
+  .Advantages_working_with_us_wrapper_text01 {
+    grid-area: text01;
+  }
+  .Advantages_working_with_us_wrapper_text02 {
+    grid-area: text02;
+  }
+  .Advantages_working_with_us_wrapper_text02 {
+    grid-area: text02;
+  }
+
+  .Advantages_working_with_us_button {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+  }
+  .Advantages_working_with_us_button button {
+    background-color: transparent;
+    border: none;
+    scroll-behavior: smooth;
+  }
+  #About_us {
+    margin-top: 200px;
+    display: flex;
+    position: relative;
+    justify-content: space-evenly;
+    background-image: url(../img/Rectangle\ 40.png);
+    /* le pongo tamaño al contenedor y no al background porque sino me corta los bordes redondeados, le pongo contain para que lo adapte al contenedor y no la corte, no repeat para que no la repita y left center es la posicion primero en x luego en y */
+    background-size: contain;
+    width: 1235px;
+    height: 785px;
+    background-repeat: no-repeat;
+    background-position: left center;
+  }
+  .About_us_text {
+    width: 500px;
+  }
+  .About_us_text h2 {
+    margin-left: 0;
+    width: 600px;
+  }
+  .About_us_text p {
+    font-family: sans-serif;
+    font-weight: 400;
+    color: white;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+  }
+  .About_us_img_1 {
+    /* al contenedor le puse position relative para permitir posicionar elementos secundarios (hijos) dentro de ese contenedor en relación con su posición normal. Entonces a la imagen le pongo position absolute ,para posicionar un elemento de manera absoluta en relación con su elemento padre más cercano que tenga una posición diferente de static (la posición predeterminada). Cuando se aplica position: absolute; a un elemento, se elimina del flujo normal del contenido y se coloca en una posición específica dentro del elemento padre, puede ser en porcentaje  DEREECHA O IZQUIERDA ES LA DISTANCIA DEL MARGEN QUE CORRESPONDA*/
+    position: absolute;
+    top: 64px;
+    right: 60px;
+    width: 205px;
+    height: 205px;
+  }
+  .About_us_img_2 {
+    position: absolute;
+    top: 180px;
+    right: 149px;
+    width: 310px;
+    height: 310px;
+  }
+  .About_us_img_3 {
+    position: absolute;
+    bottom: 55px;
+    right: 94px;
+    width: 205px;
+    height: 205px;
+  }
+  .Any_questions {
+    display: flex;
+    position: relative;
+  }
+  .Any_questions_p {
+    font-family: sans-serif;
+    font-weight: 400;
+    color: white;
+    font-size: 1.5rem;
+    /* le pongo margin bottom para que me los separe una cierta cantidad, y le pongo interlineado de letras y palabras para que se vea mas largo el texto porque la letra no es la original */
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    width: 500px;
+    position: absolute;
+  }
+  .Any_questions_div_p_img {
+    position: absolute;
+    right: 0%;
+  }
+  /* con position relative y z index (eje z posicion) en -1 puedo hacer que la imagen quede detras el footer */
+  .Any_questions_img {
+    margin-top: 90px;
+    position: relative;
+    z-index: -1;
+  }
+  .Any_questions_form {
+    display: flex;
+    flex-direction: column;
+    font-family: sans-serif;
+    font-weight: 400;
+    color: white;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    margin-left: 30px;
+  }
+  .Any_questions_form input {
+    margin-bottom: 30px;
+    border: 2px solid #728bad;
+    border-radius: 42px;
+    background-color: #222021;
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    padding: 30px;
+    width: 570px;
+    height: 40px;
+  }
+  .Any_questions_form textarea {
+    margin-bottom: 30px;
+    border: 2px solid #728bad;
+    border-radius: 42px;
+    background-color: #222021;
+    width: 570px;
+    height: 150px;
+    font-family: sans-serif;
+    font-weight: 400;
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+    word-spacing: 5px;
+    padding: 30px;
+  }
+  footer {
+    background-image: url(../img/Rectangle\ 45.png);
+    background-size: contain;
+    background-position: center center;
+    width: 1440px;
+    height: 201px;
+    margin-top: 40px;
+  }
+}
